@@ -1,6 +1,19 @@
-# vue-project
+# Template - Vue
 
 This template should help get you started developing with Vue 3 in Vite.
+
+## Features
+
+- Vue 3
+- TypeScript
+- Vite
+- Vue Router
+- Pinia
+- Vue I18n
+- ESLint + Prettier
+- Vitest + Vue Test Utils
+- Tailwind CSS
+- Shadcn Vue
 
 ## Recommended IDE Setup
 

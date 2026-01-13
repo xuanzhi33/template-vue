@@ -17,8 +17,12 @@ export const useSettingsStore = defineStore('settings', () => {
     browserLanguages.value.some((lang) => lang.startsWith('zh') || lang.startsWith('cn')),
   )
 
-  const language = ref(localStorage.getItem('language') || (preferZh.value ? 'zh' : 'en'))
-  const colorMode = ref((localStorage.getItem('colorMode') as ColorMode) || 'system')
+  const language = ref(
+    localStorage.getItem(LOCAL_STORAGE_KEY_PREFIX + 'language') || (preferZh.value ? 'zh' : 'en'),
+  )
+  const colorMode = ref(
+    (localStorage.getItem(LOCAL_STORAGE_KEY_PREFIX + 'color-mode') as ColorMode) || 'system',
+  )
 
   const persist = (key: string, value: string) => {
     localStorage.setItem(LOCAL_STORAGE_KEY_PREFIX + key, value)

@@ -302,7 +302,7 @@ Since the router uses hash mode, no server-side configuration is needed for rout
 
 #### 开发者体验
 - **ESLint** - 支持 Vue 和 TypeScript 的代码检查
-- **Prettier** - 固执己见的代码格式化工具
+- **Prettier** - 零配置的代码格式化工具
 - **EditorConfig** - 跨编辑器的一致编码风格
 - **Vitest** - 快速的单元测试框架
 - **Vue Test Utils** - Vue 组件的官方测试工具

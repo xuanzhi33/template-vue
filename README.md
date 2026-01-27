@@ -45,7 +45,7 @@ A modern, production-ready Vue 3 template with TypeScript, Tailwind CSS, and a c
 
 #### Developer Experience
 - **ESLint** - Code linting with Vue and TypeScript support
-- **Prettier** - Opinionated code formatter
+- **Prettier** - Zero-configuration code formatter
 - **EditorConfig** - Consistent coding styles across editors
 - **Vitest** - Fast unit testing framework
 - **Vue Test Utils** - Official testing utilities for Vue components
@@ -292,7 +292,7 @@ Since the router uses hash mode, no server-side configuration is needed for rout
   - 使用 CSS 变量的自定义主题配置
   - 支持深色模式，可检测系统偏好
   - 响应式设计工具
-- **Shadcn Vue** - 高质量、可访问的组件库
+- **Shadcn Vue** - 高质量、无障碍的组件库
   - 30+ 个预构建的 UI 组件
   - 可使用 Tailwind CSS 自定义
   - 基于 Reka UI（原 Radix Vue）
@@ -309,9 +309,9 @@ Since the router uses hash mode, no server-side configuration is needed for rout
 
 #### 高级功能
 - **@vueuse/core** - 基本的 Vue 组合式工具集合
-- **@tanstack/vue-table** - 用于构建强大数据网格的无头表格组件
+- **@tanstack/vue-table** - 用于构建强大数据网格的无样式表格组件
 - **Vue Input OTP** - 一次性密码输入组件
-- **Vue Sonner** - 精美的提示通知
+- **Vue Sonner** - 精美的 Toast 通知
 
 ### 📁 项目结构
 

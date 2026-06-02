@@ -78,8 +78,8 @@ template-vue/
 │   ├── stores/          # Pinia stores
 │   │   └── settings.ts  # App settings store (theme, language)
 │   ├── views/           # Page components
-│   │   ├── Home.vue     # Home page
-│   │   └── Settings.vue # Settings page
+│   │   ├── HomeView.vue     # Home page
+│   │   └── SettingsView.vue # Settings page
 │   ├── App.vue          # Root component
 │   └── main.ts          # Application entry point
 ├── public/              # Static files served as-is
@@ -335,8 +335,8 @@ template-vue/
 │   ├── stores/          # Pinia 存储
 │   │   └── settings.ts  # 应用设置存储（主题、语言）
 │   ├── views/           # 页面组件
-│   │   ├── Home.vue     # 首页
-│   │   └── Settings.vue # 设置页面
+│   │   ├── HomeView.vue     # 首页
+│   │   └── SettingsView.vue # 设置页面
 │   ├── App.vue          # 根组件
 │   └── main.ts          # 应用程序入口点
 ├── public/              # 原样提供的静态文件

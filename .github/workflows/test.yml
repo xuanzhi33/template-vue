@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install pnpm and Node.js
+        uses: pnpm/setup@v2
+        with:
+          runtime: node@24
+
+      - name: Run unit tests
+        run: pnpm test

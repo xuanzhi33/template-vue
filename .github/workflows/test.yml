@@ -20,5 +20,8 @@ jobs:
           version: 12
           runtime: node@24
 
+      - name: Type check
+        run: pnpm type-check
+
       - name: Run unit tests
         run: pnpm test

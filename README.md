@@ -87,6 +87,7 @@ template-vue/
 ├── components.json      # Shadcn Vue configuration
 ├── vite.config.ts       # Vite configuration
 ├── vitest.config.ts     # Vitest configuration
+├── vitest.setup.ts      # Vitest global setup (jsdom polyfills)
 ├── tsconfig.json        # TypeScript configuration
 ├── eslint.config.ts     # ESLint configuration
 └── package.json         # Project dependencies and scripts
@@ -165,13 +166,19 @@ pnpm type-check
 
 #### Testing
 
-```sh
-# Run unit tests
-pnpm test:unit
+Unit tests use [Vitest](https://vitest.dev/) with [Vue Test Utils](https://test-utils.vuejs.org/) in a jsdom environment.
 
-# Run tests in watch mode
-pnpm test:unit --watch
+```sh
+# Run every test once (used in CI)
+pnpm test
+
+# Re-run on change while developing
+pnpm test:unit
 ```
+
+- Test files live next to the code they cover: `src/**/__tests__/*.spec.ts`
+- `vitest.setup.ts` polyfills the browser APIs jsdom lacks (`matchMedia`, observers, pointer events) and resets app-mutated globals between tests
+- The bundled specs double as examples: pure functions, Pinia stores, i18n, components and views
 
 ### 🛠️ Recommended IDE Setup
 
@@ -344,6 +351,7 @@ template-vue/
 ├── components.json      # Shadcn Vue 配置
 ├── vite.config.ts       # Vite 配置
 ├── vitest.config.ts     # Vitest 配置
+├── vitest.setup.ts      # Vitest 全局 setup（jsdom 补丁）
 ├── tsconfig.json        # TypeScript 配置
 ├── eslint.config.ts     # ESLint 配置
 └── package.json         # 项目依赖和脚本
@@ -422,13 +430,19 @@ pnpm type-check
 
 #### 测试
 
-```sh
-# 运行单元测试
-pnpm test:unit
+单元测试使用 [Vitest](https://vitest.dev/) + [Vue Test Utils](https://test-utils.vuejs.org/)，运行在 jsdom 环境。
 
-# 在监视模式下运行测试
-pnpm test:unit --watch
+```sh
+# 运行全部测试（CI 使用，跑完即退出）
+pnpm test
+
+# 开发时监听改动自动重跑
+pnpm test:unit
 ```
+
+- 测试文件与被测代码放在一起：`src/**/__tests__/*.spec.ts`
+- `vitest.setup.ts` 补齐 jsdom 缺失的浏览器 API（`matchMedia`、各类 Observer、指针事件），并在用例之间重置被应用修改的全局状态
+- 内置的测试同时充当示例：纯函数、Pinia store、i18n、组件与视图
 
 ### 🛠️ 推荐的 IDE 设置
 

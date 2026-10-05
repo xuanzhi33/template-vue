@@ -11,6 +11,16 @@ function flattenKeys(value: unknown, prefix = ''): string[] {
   )
 }
 
+/** Paths of every leaf whose value is an empty or whitespace-only string. */
+function emptyPaths(value: unknown, prefix = ''): string[] {
+  if (value === null || typeof value !== 'object') {
+    return typeof value === 'string' && value.trim() === '' ? [prefix] : []
+  }
+  return Object.entries(value as Record<string, unknown>).flatMap(([key, child]) =>
+    emptyPaths(child, prefix ? `${prefix}.${key}` : key),
+  )
+}
+
 afterEach(() => {
   i18n.global.locale.value = 'en'
 })
@@ -32,5 +42,10 @@ describe('i18n config', () => {
 
   it('keeps en and zh keys in sync', () => {
     expect(flattenKeys(zh).sort()).toEqual(flattenKeys(en).sort())
+  })
+
+  it('has no empty translations', () => {
+    expect(emptyPaths(en)).toEqual([])
+    expect(emptyPaths(zh)).toEqual([])
   })
 })

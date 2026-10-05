@@ -46,7 +46,7 @@ const modelValue = defineModel<string>()
       <Select v-model="modelValue">
         <SelectTrigger :id="label">
           <SelectValue>
-            {{options?.find(opt => opt.value === modelValue)?.label || placeholder}}
+            {{ options?.find((opt) => opt.value === modelValue)?.label || placeholder }}
           </SelectValue>
         </SelectTrigger>
         <SelectContent>

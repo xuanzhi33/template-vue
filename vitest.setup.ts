@@ -49,7 +49,8 @@ if (typeof globalThis.IntersectionObserver !== 'function') {
 
 // jsdom ships MouseEvent but not PointerEvent, which Reka UI features reference.
 if (typeof globalThis.PointerEvent !== 'function') {
-  globalThis.PointerEvent = class PointerEvent extends MouseEvent {} as unknown as typeof PointerEvent
+  globalThis.PointerEvent =
+    class PointerEvent extends MouseEvent {} as unknown as typeof PointerEvent
 }
 
 // jsdom implements neither scrolling nor pointer capture on elements.

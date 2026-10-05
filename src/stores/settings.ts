@@ -16,14 +16,8 @@ export const useSettingsStore = defineStore('settings', () => {
     browserLanguages.value.some((lang) => lang.startsWith('zh') || lang.startsWith('cn')),
   )
 
-  const language = useStorage(
-    LOCAL_STORAGE_KEY_PREFIX + 'language',
-    preferZh.value ? 'zh' : 'en',
-  )
-  const colorMode = useStorage<ColorMode>(
-    LOCAL_STORAGE_KEY_PREFIX + 'color-mode',
-    'system',
-  )
+  const language = useStorage(LOCAL_STORAGE_KEY_PREFIX + 'language', preferZh.value ? 'zh' : 'en')
+  const colorMode = useStorage<ColorMode>(LOCAL_STORAGE_KEY_PREFIX + 'color-mode', 'system')
 
   const isDarkMode = computed(() => {
     if (colorMode.value === 'dark') return true

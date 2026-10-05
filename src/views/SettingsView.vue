@@ -11,19 +11,20 @@ const { colorMode, language } = storeToRefs(settingsStore)
 const { t, availableLocales } = useI18n()
 
 const colorOptions = computed(() => {
-  return ['light', 'dark', 'system'].map(mode => ({
+  return ['light', 'dark', 'system'].map((mode) => ({
     label: t(`settings.interface.colorModeOptions.${mode}`),
-    value: mode
+    value: mode,
   }))
 })
 
-const localeOptions = computed(() => availableLocales.map(loc => ({
-  label: t(`settings.interface.languageOptions.${loc}`),
-  value: loc
-})))
+const localeOptions = computed(() =>
+  availableLocales.map((loc) => ({
+    label: t(`settings.interface.languageOptions.${loc}`),
+    value: loc,
+  })),
+)
 
 const sectionTitleClass = 'font-semibold text-muted-foreground border-b pt-3 pb-2'
-
 </script>
 
 <template>
@@ -39,11 +40,21 @@ const sectionTitleClass = 'font-semibold text-muted-foreground border-b pt-3 pb-
           {{ t('settings.interface.title') }}
         </h2>
 
-        <SettingsItem v-model="colorMode" :label="t('settings.interface.colorMode')" type="select" :icon="SunMoon"
-          :options="colorOptions" />
+        <SettingsItem
+          v-model="colorMode"
+          :label="t('settings.interface.colorMode')"
+          type="select"
+          :icon="SunMoon"
+          :options="colorOptions"
+        />
 
-        <SettingsItem v-model="language" :label="t('settings.interface.language')" type="select" :icon="Languages"
-          :options="localeOptions" />
+        <SettingsItem
+          v-model="language"
+          :label="t('settings.interface.language')"
+          type="select"
+          :icon="Languages"
+          :options="localeOptions"
+        />
       </section>
     </div>
   </div>

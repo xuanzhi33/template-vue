@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n';
-import { useRouter } from 'vue-router';
-import { Button } from '@/components/ui/button';
-import { Settings } from 'lucide-vue-next';
+import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+import { Button } from '@/components/ui/button'
+import { Settings } from 'lucide-vue-next'
 
 const { t } = useI18n()
 const router = useRouter()

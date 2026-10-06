@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
-import { Settings } from 'lucide-vue-next'
+import { Settings } from '@lucide/vue'
 import SettingsItem from '@/components/settings/SettingsItem.vue'
 
 const options = [

@@ -4,7 +4,7 @@ import { storeToRefs } from 'pinia'
 import { useSettingsStore } from '@/stores/settings'
 import SettingsItem from '@/components/settings/SettingsItem.vue'
 import { computed } from 'vue'
-import { AppWindow, Languages, Settings, SunMoon } from 'lucide-vue-next'
+import { AppWindow, Languages, Settings, SunMoon } from '@lucide/vue'
 const settingsStore = useSettingsStore()
 const { colorMode, language } = storeToRefs(settingsStore)
 
